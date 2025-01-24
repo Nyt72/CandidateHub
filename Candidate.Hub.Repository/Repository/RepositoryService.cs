@@ -8,7 +8,7 @@ using System.Threading.Tasks;
 
 namespace Candidate.Hub.Repository
 {
-    public class RepositoryService(CandidateDbContext candidateDbContext) : IRepositoryService
+    public class RepositoryService() : IRepositoryService
     {
         public async Task AddOrUpdateCandidate(CandidateDetails candidate)
         {
