@@ -23,8 +23,7 @@ namespace Candidate.Hub.Api.Tests
         public void Setup()
         {
             _mockRepositoryService = new Mock<IRepositoryService>();
-            _controller = new CandidateController(_mockRepositoryService.Object);
-        
+            _controller = new CandidateController(_mockRepositoryService.Object);      
         }
 
         [Test]

@@ -15,7 +15,7 @@ namespace Candidate.Hub.Api.Controllers
         [HttpPost]
         public async Task<IActionResult> AddOrUpdateCandidate([FromBody] CandidateDto candidate)
         {
-            if (candidate is not null)
+            if (candidate is null)
             {
                 return BadRequest(new ApiResponse
                 {
