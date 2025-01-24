@@ -1,17 +1,12 @@
 ﻿using Candidate.Hub.Entities.Model;
 using Candidate.Hub.Repository.Repository;
 using Microsoft.EntityFrameworkCore;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace Candidate.Hub.Repository
 {
     public class RepositoryService(CandidateDbContext candidateDbContext) : IRepositoryService
     {
-        public async Task<CandidateDetails> AddOrUpdateCandidate(CandidateDetails candidate)
+        public async Task<CandidateDetails?> AddOrUpdateCandidate(CandidateDetails candidate)
         {
 
             //unique validation 
@@ -33,6 +28,7 @@ namespace Candidate.Hub.Repository
             }
             else
             {
+                //add new guid 
                 candidate.Id = new Guid();
                 await candidateDbContext.CandidateDetails.AddAsync(candidate);
             }

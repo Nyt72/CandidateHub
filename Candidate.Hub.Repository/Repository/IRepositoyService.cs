@@ -9,6 +9,6 @@ namespace Candidate.Hub.Repository.Repository
 {
     public interface IRepositoryService
     {
-        Task<CandidateDetails> AddOrUpdateCandidate(CandidateDetails candidate);
+        Task<CandidateDetails?> AddOrUpdateCandidate(CandidateDetails candidate);
     }
 }

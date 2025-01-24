@@ -10,16 +10,16 @@ namespace Candidate.Hub.Entities.DTO
     public class CandidateDto
     {
         [Required(ErrorMessage = "First Name is required")]
-        public required string FirstName { get; set; }
+        public string FirstName { get; set; } = string.Empty;
         [Required(ErrorMessage = "Last Name is required")]
-        public required string LastName { get; set; }
-        public string? PhoneNumber { get; set; }
+        public string LastName { get; set; } = string.Empty;
+        public string PhoneNumber { get; set; } = string.Empty;
         [Required(ErrorMessage = "Email is required")]
-        public required string Email { get; set; }
-        public string? TimeInterval { get; set; } //eg. 10AM
+        public string Email { get; set; } = string.Empty;
+        public string? TimeInterval { get; set; } //SUPPOSE : 10AM
         public string? LinkedInProfileUrl { get; set; }
         public string? GitHubProfileUrl { get; set; }
         [Required]
-        public required string Comments { get; set; }
+        public string Comments { get; set; } = string.Empty;
     }
 }
