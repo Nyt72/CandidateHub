@@ -1,5 +1,7 @@
 
+using Candidate.Hub.Repository;
 using Candidate.Hub.Repository.Repository;
+using Microsoft.EntityFrameworkCore;
 
 namespace Candidate.Hub.Api
 {
@@ -15,7 +17,10 @@ namespace Candidate.Hub.Api
             // Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle
             builder.Services.AddEndpointsApiExplorer();
             builder.Services.AddSwaggerGen();
-            builder.Services.AddTransient<IRepository ,Repository>();
+            builder.Services.AddDbContext<CandidateDbContext>(options =>
+            options.UseSqlServer(builder.Configuration.GetConnectionString("CandidateHub")));
+
+            builder.Services.AddTransient<IRepositoryService , RepositoryService>();
             var app = builder.Build();
 
             // Configure the HTTP request pipeline.

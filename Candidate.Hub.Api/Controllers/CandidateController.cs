@@ -1,5 +1,6 @@
 using Microsoft.AspNetCore.Mvc;
 using Candidate.Hub.Entities.Model;
+using Candidate.Hub.Entities.DTO;
 
 namespace Candidate.Hub.Api.Controllers
 {
@@ -10,7 +11,7 @@ namespace Candidate.Hub.Api.Controllers
 
         [HttpPost]
         [Route("AddOrUpdate")]
-        public async Task<IActionResult> AddOrUpdateCandidate([FromBody] CandidateDetails candidate)
+        public async Task<IActionResult> AddOrUpdateCandidate([FromBody] CandidateDto candidate)
         {
             if (candidate == null)
             {

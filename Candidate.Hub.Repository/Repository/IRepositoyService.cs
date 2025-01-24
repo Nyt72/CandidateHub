@@ -7,8 +7,8 @@ using System.Threading.Tasks;
 
 namespace Candidate.Hub.Repository.Repository
 {
-    public interface IRepository
+    public interface IRepositoryService
     {
-        Task<CandidateDetails> AddOrUpdateCandidate(CandidateDetails candidate);
+        Task AddOrUpdateCandidate(CandidateDetails candidate);
     }
 }
